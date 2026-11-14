@@ -151,7 +151,9 @@ main {
   overflow: visible;
   padding: clamp(0.45rem, 0.8vw, 0.75rem);
   position: relative;
+  right: -clamp(4rem, 14vw, 12rem);
   width: clamp(10rem, 19vw, 17rem);
+  z-index: 3;
 }
 
 .hero-portrait::before {
@@ -600,6 +602,7 @@ footer > p:first-child {
 
   .hero-portrait {
     margin-top: 1.4rem;
+    right: 0;
     width: 11.5rem;
   }
 
@@ -616,7 +619,7 @@ footer > p:first-child {
   .hero-sheet {
     left: 12%;
     min-height: 26rem;
-    top: 25rem;
+    top: 30rem;
     width: 76%;
   }
 
@@ -633,7 +636,7 @@ footer > p:first-child {
   }
 
   .hero-wide {
-    margin-top: 20rem;
+    margin-top: 22rem;
     width: 56%;
   }
 

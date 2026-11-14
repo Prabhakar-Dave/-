@@ -74,14 +74,14 @@ export default function App() {
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <div className="hero-red" data-reveal>
-          <div className="hero-meta micro">
+        <div className="hero-red">
+          <div className="hero-meta micro" data-reveal>
             <span>Ahmedabad, India</span>
           </div>
-          <p className="hero-intro">
+          <p className="hero-intro" data-reveal>
             A disciplined polymath moving between technology, enterprise, movement and the senses.
           </p>
-          <figure className="hero-portrait frame">
+          <figure className="hero-portrait frame" data-reveal>
             <img
               src={imagePath("image1.jpg")}
               alt="Meditative athlete in a dark editorial portrait"
