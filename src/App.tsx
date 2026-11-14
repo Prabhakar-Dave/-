@@ -164,6 +164,53 @@ export default function App() {
         </div>
       </section>
 
+      <div className="education-credentials">
+        <section className="education section-ivory">
+          <div className="section-label micro" data-reveal>
+            <span>Education</span>
+          </div>
+          <div className="education-title" data-reveal>
+            <p className="eyebrow">Foundations and formation</p>
+            <h2>
+              Ahmedabad
+              <br />
+              to Ontario.
+            </h2>
+          </div>
+          <div className="education-items">
+            <article data-reveal>
+              <span className="micro">School</span>
+              <h3>St. Xavier's High School</h3>
+              <p>Loyola Hall, Ahmedabad</p>
+            </article>
+            <article data-reveal>
+              <span className="micro">Higher education</span>
+              <h3>Computer Networking</h3>
+              <p>Cambrian College, Sudbury, Northern Ontario</p>
+            </article>
+          </div>
+        </section>
+
+        <section className="credentials">
+          <div className="section-label micro" data-reveal>
+            <span>Credentials</span>
+          </div>
+          <div className="credentials-layout">
+            <h2 data-reveal>
+              Proof of
+              <br />
+              practice.
+            </h2>
+            <div className="credentials-list">
+              <p data-reveal>Yoga International Certification</p>
+              <p data-reveal>Marathon participation</p>
+              <p data-reveal>State volleyball</p>
+              <p data-reveal>Karate championship</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <section className="experience" id="experience">
         <div className="experience-visual" data-reveal>
           <figure className="frame">
@@ -192,32 +239,6 @@ export default function App() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="education section-ivory">
-        <div className="section-label micro" data-reveal>
-          <span>Education</span>
-        </div>
-        <div className="education-title" data-reveal>
-          <p className="eyebrow">Foundations and formation</p>
-          <h2>
-            Ahmedabad
-            <br />
-            to Ontario.
-          </h2>
-        </div>
-        <div className="education-items">
-          <article data-reveal>
-            <span className="micro">School</span>
-            <h3>St. Xavier's High School</h3>
-            <p>Loyola Hall, Ahmedabad</p>
-          </article>
-          <article data-reveal>
-            <span className="micro">Higher education</span>
-            <h3>Computer Networking</h3>
-            <p>Cambrian College, Sudbury, Northern Ontario</p>
-          </article>
         </div>
       </section>
 
@@ -294,25 +315,6 @@ export default function App() {
             />
             <figcaption className="micro">Intensity</figcaption>
           </figure>
-        </div>
-      </section>
-
-      <section className="credentials">
-        <div className="section-label micro" data-reveal>
-          <span>Credentials</span>
-        </div>
-        <div className="credentials-layout">
-          <h2 data-reveal>
-            Proof of
-            <br />
-            practice.
-          </h2>
-          <div className="credentials-list">
-            <p data-reveal>Yoga International Certification</p>
-            <p data-reveal>Marathon participation</p>
-            <p data-reveal>State volleyball</p>
-            <p data-reveal>Karate championship</p>
-          </div>
         </div>
       </section>
 
