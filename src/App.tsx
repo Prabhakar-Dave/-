@@ -74,24 +74,25 @@ export default function App() {
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <div className="hero-red">
-          <div className="hero-meta micro" data-reveal>
+        <div className="hero-red" data-reveal>
+          <div className="hero-meta micro">
             <span>Ahmedabad, India</span>
           </div>
-          <p className="hero-intro" data-reveal>
+          <p className="hero-intro">
             A disciplined polymath moving between technology, enterprise, movement and the senses.
           </p>
-          <figure className="hero-portrait frame" data-reveal>
-            <img
-              src={imagePath("image1.jpg")}
-              alt="Meditative athlete in a dark editorial portrait"
-            />
-            <figcaption>
-              <strong>Param Rajesh Dave</strong>
-              <span className="micro">Ahmedabad, India</span>
-            </figcaption>
-          </figure>
         </div>
+
+        <figure className="hero-portrait frame" data-reveal>
+          <img
+            src={imagePath("image1.jpg")}
+            alt="Meditative athlete in a dark editorial portrait"
+          />
+          <figcaption>
+            <strong>Param Rajesh Dave</strong>
+            <span className="micro">Ahmedabad, India</span>
+          </figcaption>
+        </figure>
 
         <div className="hero-sheet" data-reveal>
           <div className="hero-contact micro">
