@@ -30,6 +30,8 @@ const disciplines = [
   "Sales",
 ];
 
+const imagePath = (filename: string) => `${import.meta.env.BASE_URL}${filename}`;
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -37,6 +39,11 @@ function Arrow() {
 export default function App() {
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -75,7 +82,10 @@ export default function App() {
             A disciplined polymath moving between technology, enterprise, movement and the senses.
           </p>
           <figure className="hero-portrait frame">
-            <img src="/image1.jpg" alt="Meditative athlete in a dark editorial portrait" />
+            <img
+              src={imagePath("image1.jpg")}
+              alt="Meditative athlete in a dark editorial portrait"
+            />
             <figcaption>
               <strong>Param Rajesh Dave</strong>
               <span className="micro">Ahmedabad, India</span>
@@ -103,7 +113,10 @@ export default function App() {
         </div>
 
         <figure className="hero-wide frame" data-reveal>
-          <img src="/image2.jpg" alt="Runners in motion photographed in black and white" />
+          <img
+            src={imagePath("image2.jpg")}
+            alt="Runners in motion photographed in black and white"
+          />
         </figure>
         <p className="scroll-cue micro">Scroll to discover</p>
       </section>
@@ -136,13 +149,17 @@ export default function App() {
           </div>
           <figure className="profile-image frame" data-reveal>
             <img
-              src="/image5.jpg"
+              src={imagePath("image5.jpg")}
               alt="Athletic figure in an expressive monochrome portrait"
               loading="lazy"
             />
           </figure>
           <figure className="profile-detail frame" data-reveal>
-            <img src="/image8.jpg" alt="Athlete balancing in a handstand" loading="lazy" />
+            <img
+              src={imagePath("image8.jpg")}
+              alt="Athlete balancing in a handstand"
+              loading="lazy"
+            />
           </figure>
         </div>
       </section>
@@ -151,7 +168,7 @@ export default function App() {
         <div className="experience-visual" data-reveal>
           <figure className="frame">
             <img
-              src="/image3.jpg"
+              src={imagePath("image3.jpg")}
               alt="Network infrastructure in a dark server room"
               loading="lazy"
             />
@@ -223,14 +240,14 @@ export default function App() {
         <div className="disciplines-images">
           <figure className="frame" data-reveal>
             <img
-              src="/image4.jpg"
+              src={imagePath("image4.jpg")}
               alt="Red and black perfume bottle in an editorial still life"
               loading="lazy"
             />
           </figure>
           <figure className="frame" data-reveal>
             <img
-              src="/image7.jpg"
+              src={imagePath("image7.jpg")}
               alt="Perfume bottle photographed as an object study"
               loading="lazy"
             />
@@ -254,15 +271,27 @@ export default function App() {
         </div>
         <div className="passion-gallery">
           <figure className="frame image-tall" data-reveal>
-            <img src="/image6.jpg" alt="Runner moving through an open landscape" loading="lazy" />
+            <img
+              src={imagePath("image6.jpg")}
+              alt="Runner moving through an open landscape"
+              loading="lazy"
+            />
             <figcaption className="micro">Endurance</figcaption>
           </figure>
           <figure className="frame image-wide" data-reveal>
-            <img src="/image9.jpg" alt="Yoga practice beside the water" loading="lazy" />
+            <img
+              src={imagePath("image9.jpg")}
+              alt="Yoga practice beside the water"
+              loading="lazy"
+            />
             <figcaption className="micro">Stillness</figcaption>
           </figure>
           <figure className="frame image-landscape" data-reveal>
-            <img src="/image10.jpg" alt="Athlete leaping across an open field" loading="lazy" />
+            <img
+              src={imagePath("image10.jpg")}
+              alt="Athlete leaping across an open field"
+              loading="lazy"
+            />
             <figcaption className="micro">Intensity</figcaption>
           </figure>
         </div>
