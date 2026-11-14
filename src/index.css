@@ -357,24 +357,33 @@ main {
 }
 
 .education-credentials {
+  align-items: stretch;
   display: grid;
+  gap: clamp(1rem, 1.8vw, 1.75rem);
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: clamp(1.5rem, 3vw, 3rem) var(--gutter);
 }
 
 .education,
 .credentials {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: clamp(32rem, 42vw, 40rem);
   min-width: 0;
-  padding: clamp(3rem, 6vw, 6rem) var(--gutter);
+  padding: clamp(2rem, 4vw, 3.75rem);
 }
 
 .education-title {
-  margin: clamp(2.5rem, 4vw, 4rem) 0;
+  margin: clamp(1.5rem, 2.6vw, 2.75rem) 0 0;
 }
 
 .education-items {
   display: grid;
   gap: clamp(1rem, 2vw, 2rem);
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: auto;
+  padding-top: 2rem;
 }
 
 .education-items article {
@@ -386,7 +395,7 @@ main {
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.2;
-  margin: 2.5rem 0 0.8rem;
+  margin: 1.5rem 0 0.8rem;
 }
 
 .education-items p {
@@ -484,10 +493,11 @@ figcaption {
 }
 
 .credentials-layout {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: minmax(0, 1fr);
-  margin-top: clamp(2.5rem, 4vw, 4rem);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: clamp(1.5rem, 2.6vw, 2.75rem);
 }
 
 .education h2,
@@ -496,7 +506,7 @@ figcaption {
 }
 
 .credentials-list {
-  align-self: stretch;
+  margin-top: auto;
 }
 
 .credentials-list p {
@@ -505,6 +515,46 @@ figcaption {
   letter-spacing: -0.02em;
   line-height: 1.35;
   padding: 1rem 0;
+}
+
+@media (max-width: 900px) {
+  .education-credentials {
+    gap: 0;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .education,
+  .credentials {
+    height: auto;
+    min-height: 0;
+    padding: clamp(3rem, 6vw, 6rem) var(--gutter);
+  }
+
+  .education,
+  .credentials {
+    display: block;
+  }
+
+  .education-title {
+    margin: clamp(2.5rem, 4vw, 4rem) 0;
+  }
+
+  .education-items {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .credentials-layout {
+    display: grid;
+    flex: initial;
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .credentials-list {
+    margin-top: 0;
+  }
 }
 
 .closing {
