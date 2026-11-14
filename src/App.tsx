@@ -119,7 +119,6 @@ export default function App() {
             alt="Runners in motion photographed in black and white"
           />
         </figure>
-        <p className="scroll-cue micro">Scroll to discover</p>
       </section>
 
       <section className="profile section-ivory" id="profile">
@@ -150,14 +149,14 @@ export default function App() {
           </div>
           <figure className="profile-image frame" data-reveal>
             <img
-              src={imagePath("image5.jpg")}
+              src={imagePath("image3.jpg")}
               alt="Athletic figure in an expressive monochrome portrait"
               loading="lazy"
             />
           </figure>
           <figure className="profile-detail frame" data-reveal>
             <img
-              src={imagePath("image8.jpg")}
+              src={imagePath("image4.jpg")}
               alt="Athlete balancing in a handstand"
               loading="lazy"
             />
@@ -169,7 +168,7 @@ export default function App() {
         <div className="experience-visual" data-reveal>
           <figure className="frame">
             <img
-              src={imagePath("image3.jpg")}
+              src={imagePath("image5.jpg")}
               alt="Network infrastructure in a dark server room"
               loading="lazy"
             />
@@ -241,7 +240,7 @@ export default function App() {
         <div className="disciplines-images">
           <figure className="frame" data-reveal>
             <img
-              src={imagePath("image4.jpg")}
+              src={imagePath("image6.jpg")}
               alt="Red and black perfume bottle in an editorial still life"
               loading="lazy"
             />
@@ -273,7 +272,7 @@ export default function App() {
         <div className="passion-gallery">
           <figure className="frame image-tall" data-reveal>
             <img
-              src={imagePath("image6.jpg")}
+              src={imagePath("image8.jpg")}
               alt="Runner moving through an open landscape"
               loading="lazy"
             />

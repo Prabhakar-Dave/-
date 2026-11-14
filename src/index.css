@@ -118,7 +118,7 @@ main {
   grid-template-areas:
     "red portrait"
     "sheet sheet"
-    "scroll wide";
+    "wide wide";
   grid-template-columns: minmax(0, 1.1fr) minmax(17rem, 0.8fr);
   min-height: 100svh;
   padding: clamp(6.5rem, 10vw, 9rem) var(--gutter) clamp(4rem, 8vw, 7rem);
@@ -230,14 +230,6 @@ main {
   grid-area: wide;
   margin: 0;
   width: 100%;
-}
-
-.scroll-cue {
-  align-self: end;
-  grid-area: scroll;
-  justify-self: start;
-  margin: 0;
-  writing-mode: vertical-rl;
 }
 
 .section-ivory {
@@ -585,8 +577,7 @@ footer > p:first-child {
       "red"
       "portrait"
       "sheet"
-      "wide"
-      "scroll";
+      "wide";
     grid-template-columns: minmax(0, 1fr);
     min-height: auto;
     padding-top: 5.5rem;
@@ -628,10 +619,6 @@ footer > p:first-child {
   .hero-wide {
     justify-self: center;
     max-width: 32rem;
-  }
-
-  .scroll-cue {
-    display: none;
   }
 
   .profile-grid,
