@@ -4,11 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 import fs from "node:fs";
 import path from "node:path";
 
-import siteConfiguration from "./.figma/make/site.json";
+import siteConfiguration from "./.portfolio-config/make/site.json";
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // .figma/make/deploy-preview passes `--mode development` for cached-preview builds.
+  // The project preview script passes `--mode development` for cached-preview builds.
   const emitSourcemaps = mode === "development";
   const base = process.env.FIGMA_PUBLIC_URL
     ? `${process.env.FIGMA_PUBLIC_URL}/`
@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => {
       port: parseInt(process.env.PORT || "8443"),
       strictPort: true,
       watch: {
-        ignored: ["**/.figma/**"],
+        ignored: ["**/.portfolio-config/**"],
       },
     },
     preview: {
@@ -78,7 +78,7 @@ type FigmaSiteConfiguration = {
   };
 };
 
-/** Applies /.figma/make/site.json to the generated document shell. */
+/** Applies .portfolio-config/make/site.json to the generated document shell. */
 function figmaSiteConfiguration(config: FigmaSiteConfiguration, base: string): Plugin {
   function sanitizeHtmlValue(value: string | undefined): string {
     return value?.replace(/[^a-zA-Z0-9_-]/g, "") || "";
@@ -214,7 +214,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration, base: string): P
             {
               tag: "style",
               children: `
-  .figma-bypass-link {
+  .skip-link {
     position: fixed;
     top: 8px;
     left: 8px;
@@ -227,7 +227,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration, base: string): P
     font: 600 14px/1.2 system-ui, sans-serif;
     text-decoration: none;
   }
-  .figma-bypass-link:focus {
+  .skip-link:focus {
     transform: translateY(0);
   }
 `,
@@ -235,7 +235,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration, base: string): P
             },
             {
               tag: "a",
-              attrs: { class: "figma-bypass-link", href: "#root" },
+              attrs: { class: "skip-link", href: "#root" },
               children: "Skip to content",
               injectTo: "body-prepend",
             },
@@ -362,7 +362,7 @@ function figmaReactRefreshBoundaryFallback(): Plugin {
 }
 
 /**
- * Serves a blank render-target page at /.figma/make/kit.html that
+ * Serves a blank render-target page at /.portfolio-config/make/kit.html that
  * the Figma preview script drives directly. The page exposes a
  * registry of every file matching `storiesGlob` on
  * window.__FIGMA__.stories so the design surface can dynamically
@@ -376,7 +376,7 @@ function figmaMakeKitPlugin(options: { storiesGlob: string | string[] }): Plugin
   const storiesGlob = Array.isArray(options.storiesGlob)
     ? options.storiesGlob
     : [options.storiesGlob];
-  const ROUTE = "/.figma/make/kit.html";
+  const ROUTE = "/.portfolio-config/make/kit.html";
   const VIRTUAL_ID = "virtual:figma-stories";
   const RESOLVED_ID = "\0" + VIRTUAL_ID;
   const STORIES_MODULE = `export const stories = import.meta.glob(${JSON.stringify(storiesGlob)})`;
