@@ -69,6 +69,7 @@ export default function App() {
         <nav aria-label="Primary navigation">
           <a href="#profile">Profile</a>
           <a href="#experience">Experience</a>
+          <a href="#journey">Journey</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -316,6 +317,88 @@ export default function App() {
             <figcaption className="micro">Intensity</figcaption>
           </figure>
         </div>
+      </section>
+
+      <section className="travel" id="journey" aria-labelledby="travel-title">
+        <div className="travel-heading">
+          <div className="travel-heading-main">
+            <div className="section-label micro" data-reveal>
+              <span>Beyond borders</span>
+            </div>
+            <h2 id="travel-title" data-reveal>
+              A wider world.
+              <br />
+              A longer chapter.
+            </h2>
+          </div>
+          <p className="travel-intro" data-reveal>
+            Singapore, Malaysia, Thailand and Dubai widened the map. Canada became the longest
+            chapter—where I spent the most time studying and working.
+          </p>
+        </div>
+
+        <div className="travel-layout">
+          {/* Public-domain map: Wikimedia Commons, BlankMap-World.svg by Canuckguy et al. */}
+          <figure className="travel-map" data-reveal>
+            <svg
+              viewBox="0 0 1000 508"
+              role="img"
+              aria-labelledby="travel-map-title travel-map-desc"
+            >
+              <title id="travel-map-title">A world of journeys from Ahmedabad</title>
+              <desc id="travel-map-desc">
+                Curved routes connect Ahmedabad with Canada, Dubai, Thailand, Malaysia and
+                Singapore.
+              </desc>
+              <image href={imagePath("world-map.png")} height="508" width="1000" />
+              <g className="travel-routes" fill="none">
+                <path d="M 670 204 C 564 91, 414 93, 255 126" />
+                <path d="M 670 204 C 637 155, 615 165, 607 194" />
+                <path d="M 670 204 C 713 154, 750 183, 739 235" />
+                <path d="M 670 204 C 724 175, 770 218, 746 260" />
+                <path d="M 670 204 C 728 192, 772 233, 748 272" />
+              </g>
+              <g className="travel-map-pins" aria-hidden="true">
+                <circle className="travel-pin" cx="255" cy="126" r="5" />
+                <circle className="travel-pin" cx="607" cy="194" r="5" />
+                <circle className="travel-pin" cx="739" cy="235" r="5" />
+                <circle className="travel-pin" cx="746" cy="260" r="5" />
+                <circle className="travel-pin" cx="748" cy="272" r="5" />
+                <circle className="travel-origin-ring" cx="670" cy="204" r="10" />
+                <circle className="travel-origin" cx="670" cy="204" r="4" />
+              </g>
+              <text className="travel-origin-label" x="684" y="211">
+                AHMEDABAD
+              </text>
+            </svg>
+            <figcaption className="travel-map-caption micro">
+              <span>Lines from home</span>
+              <span>Places that stayed with me</span>
+            </figcaption>
+          </figure>
+
+          <aside className="travel-canada" data-reveal>
+            <p className="eyebrow">The longest chapter</p>
+            <h3>Canada.</h3>
+            <p className="travel-canada-copy">
+              Study. Work. More time here than anywhere else I explored.
+            </p>
+            <div className="travel-canada-footer micro">
+              <span>Study</span>
+              <span>Work</span>
+              <span>Life abroad</span>
+            </div>
+          </aside>
+        </div>
+
+        <ul className="travel-destinations" aria-label="Places explored" data-reveal>
+          {["Singapore", "Malaysia", "Thailand", "Dubai", "Canada"].map((place) => (
+            <li className="travel-destination" key={place}>
+              <span aria-hidden="true" />
+              {place}
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="closing section-ivory" id="contact">
