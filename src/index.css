@@ -408,6 +408,7 @@ main {
 .disciplines {
   display: grid;
   grid-template-columns: 54% 46%;
+  margin-top: clamp(1.5rem, 3.5vw, 3.5rem);
 }
 
 .disciplines-copy {
